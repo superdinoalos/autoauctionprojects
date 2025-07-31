@@ -3,7 +3,10 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import AbstractUser
 
 class UserProfile(AbstractUser):
+<<<<<<< HEAD
     username = models.CharField(max_length=150, unique=True)
+=======
+>>>>>>> e0bf5188d887d3d0c3a7fef246dafd8da9b23d35
     STATUS_CHOICES = (
     ('seller', 'Seller'),
     ('buyer', 'Buyer')
@@ -34,6 +37,7 @@ class Car(models.Model):
     description = models.TextField(blank=True)
     seller = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='cars')
     created_at = models.DateTimeField(auto_now_add=True)
+
 
     def __str__(self):
         return f"{self.brand} {self.model} ({self.year})"

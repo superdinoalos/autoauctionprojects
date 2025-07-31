@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 from rest_framework import serializers
 from .models import *
+=======
+from .models import *
+from rest_framework import serializers
+>>>>>>> e0bf5188d887d3d0c3a7fef246dafd8da9b23d35
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
+<<<<<<< HEAD
         fields = ['id', 'username', 'first_name', 'last_name', 'email', 'phone_number']
         extra_kwargs = {
             'password': {'write_only': True}
@@ -58,3 +64,12 @@ class FeedbackSerializer(serializers.ModelSerializer):
             'rating', 'comment', 'created_at'
         ]
         read_only_fields = ['created_at']
+=======
+        fields = '__all__'
+
+
+class CarSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Car
+        fields = '__all__'
+>>>>>>> e0bf5188d887d3d0c3a7fef246dafd8da9b23d35

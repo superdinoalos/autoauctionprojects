@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,10 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'autosell',
     'rest_framework',
+<<<<<<< HEAD
     'phonenumber_field',
     'rest_framework_simplejwt',
     'django_filters',
     'drf_yasg',
+=======
+    "phonenumber_field",
+>>>>>>> e0bf5188d887d3d0c3a7fef246dafd8da9b23d35
 ]
 
 MIDDLEWARE = [
@@ -56,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'autoauction.urls'
@@ -118,7 +124,20 @@ TIME_ZONE = 'Asia/Bishkek'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('ru', 'Russian'),
+)
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_LANGUAGES = ('ru', 'en')
+
+
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -131,6 +150,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 AUTH_USER_MODEL = 'autosell.UserProfile'
 
 
@@ -147,3 +167,7 @@ REST_FRAMEWORK = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+=======
+
+AUTH_USER_MODEL = 'autosell.UserProfile'
+>>>>>>> e0bf5188d887d3d0c3a7fef246dafd8da9b23d35
