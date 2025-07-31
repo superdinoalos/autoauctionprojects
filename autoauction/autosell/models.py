@@ -28,7 +28,7 @@ class Car(models.Model):
     model = models.CharField(max_length=100)
     year = models.PositiveIntegerField()
     fuel_type = models.CharField(max_length=10, choices=FUEL_CHOICES)
-    transmission = models.CharField(max_length=10, choices=TRANSMISSION_CHOICES)
+    transmission = models.CharField(max_length=10, choices=TRANSMISSION_CHOICES, help_text="Система Передачи")
     mileage = models.PositiveIntegerField(help_text="Пробег в километрах")
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField(blank=True)
